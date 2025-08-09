@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Linq; // LINQ를 사용하기 위해 추가
+using System.Linq;
 
 // 기업 정보
 public class Company
@@ -11,6 +11,7 @@ public class Company
     public int Price { get; set; }
     public int InitialPrice { get; set; }
     public int PriceChange { get; set; }
+    public double PriceChangePercentage { get; set; }
 }
 
 // 플레이어 정보
@@ -34,6 +35,7 @@ public class StockMarketGame
         while (true)
         {
             DisplayMarketInfo();
+            DisplayPlayerPortfolio();
             Console.WriteLine("\n명령어를 입력하세요 (예: buy A 10, sell B 5, next_turn, exit): ");
             var command = Console.ReadLine().ToLower().Split(' ');
             ProcessCommand(command);
@@ -68,8 +70,11 @@ public class StockMarketGame
     {
         foreach (var company in companies)
         {
-            var changePercentage = random.NextDouble() * 0.6 - 0.3; // -0.3 ~ 0.3 (30%)
+            var changePercentage = random.NextDouble() * 0.6 - 0.3;
             var priceChange = (int)(company.Price * changePercentage);
+
+            // 주가 변동률 계산
+            company.PriceChangePercentage = (double)priceChange / company.Price * 100;
             company.PriceChange = priceChange;
             company.Price += priceChange;
 
@@ -85,31 +90,55 @@ public class StockMarketGame
         Console.Clear();
         Console.WriteLine("--- 현재 시장 상황 ---");
         Console.WriteLine($"플레이어 자금: {player.Cash:N0}원\n");
-        // E 바이오와 정렬을 위해 탭 대신 고정된 너비를 사용
-        Console.WriteLine("기업명\t\t현재가\t\t전 대비 변동\t\t보유 수량\t매수 시점 대비");
+        Console.WriteLine("기업명\t\t현재가\t\t전 대비 변동\t\t주가 증감률");
 
         foreach (var company in companies)
         {
+            // 주가 변동률에만 색상 적용
             Console.ForegroundColor = company.PriceChange > 0 ? ConsoleColor.Red : (company.PriceChange < 0 ? ConsoleColor.Blue : ConsoleColor.Gray);
             string priceChangeSign = company.PriceChange > 0 ? "▲" : (company.PriceChange < 0 ? "▼" : "-");
             string priceChangeDisplay = $"{priceChangeSign} {Math.Abs(company.PriceChange):N0}원";
 
-            int ownedStocks = player.Stocks.GetValueOrDefault(company.Name, 0);
-            string buyPriceChangeDisplay = "-";
+            // 주가 증감률 출력
+            string priceChangePercentageDisplay = $"{company.PriceChangePercentage:F2}%";
 
-            if (ownedStocks > 0 && player.BuyPriceHistory.ContainsKey(company.Name))
-            {
-                int buyPrice = player.BuyPriceHistory[company.Name];
-                int currentPrice = company.Price;
-                long totalProfit = (long)(currentPrice - buyPrice) * ownedStocks;
-
-                Console.ForegroundColor = totalProfit > 0 ? ConsoleColor.Red : (totalProfit < 0 ? ConsoleColor.Blue : ConsoleColor.Gray);
-                buyPriceChangeDisplay = $"{totalProfit:N0}원";
-            }
-
-            // E 바이오 이름 길이에 맞춰 탭을 조정
             string namePadding = (company.Name == "E 바이오") ? "\t" : "\t\t";
-            Console.WriteLine($"{company.Name}{namePadding}{company.Price:N0}원\t{priceChangeDisplay}\t\t{ownedStocks}주\t\t{buyPriceChangeDisplay}");
+            Console.WriteLine($"{company.Name}{namePadding}{company.Price:N0}원\t{priceChangeDisplay}\t\t{priceChangePercentageDisplay}");
+            Console.ForegroundColor = ConsoleColor.Gray;
+        }
+    }
+
+    private static void DisplayPlayerPortfolio()
+    {
+        Console.WriteLine("\n--- 내 주식 잔고 ---");
+
+        if (player.Stocks.Count == 0)
+        {
+            Console.WriteLine("보유한 주식이 없습니다.");
+            return;
+        }
+
+        Console.WriteLine("기업명\t\t보유 수량\t매수 평단가\t\t총 평가 금액\t\t총 이익/손실");
+
+        foreach (var stock in player.Stocks)
+        {
+            string companyName = stock.Key;
+            int quantity = stock.Value;
+            var company = companies.Find(c => c.Name == companyName);
+
+            if (company == null) continue;
+
+            int buyPrice = player.BuyPriceHistory[companyName];
+            long currentValue = (long)company.Price * quantity;
+            long totalCost = (long)buyPrice * quantity;
+            long profitOrLoss = currentValue - totalCost;
+
+            // 총 이익/손실에만 색상 적용
+            Console.ForegroundColor = profitOrLoss > 0 ? ConsoleColor.Red : (profitOrLoss < 0 ? ConsoleColor.Blue : ConsoleColor.Gray);
+
+            string namePadding = (companyName == "E 바이오") ? "\t" : "\t\t";
+            Console.WriteLine($"{companyName}{namePadding}{quantity}주\t\t{buyPrice:N0}원\t\t{currentValue:N0}원\t\t{profitOrLoss:N0}원");
+
             Console.ForegroundColor = ConsoleColor.Gray;
         }
     }
@@ -129,6 +158,8 @@ public class StockMarketGame
             case "next_turn":
                 UpdatePrices();
                 Console.WriteLine("턴이 넘어갔습니다. 주가가 변동되었습니다.");
+                DisplayMarketInfo();
+                DisplayPlayerPortfolio();
                 break;
             case "exit":
                 Environment.Exit(0);
@@ -182,7 +213,6 @@ public class StockMarketGame
             player.Cash -= cost;
             player.Stocks[company.Name] = player.Stocks.GetValueOrDefault(company.Name, 0) + quantity;
 
-            // 매수 시점 평균 가격 업데이트
             int currentTotalValue = player.Stocks.GetValueOrDefault(company.Name, 0) * player.BuyPriceHistory.GetValueOrDefault(company.Name, 0);
             int newTotalValue = currentTotalValue + company.Price * quantity;
             int newTotalQuantity = player.Stocks.GetValueOrDefault(company.Name, 0);

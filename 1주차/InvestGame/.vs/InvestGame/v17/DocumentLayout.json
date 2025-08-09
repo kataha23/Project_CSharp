@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\InvestGame\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\Project_CSharp\\1\uC8FC\uCC28\\InvestGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B250761-42EB-43D1-AE73-58E1C501CCCB}|InvestGame.csproj|c:\\users\\administrator\\desktop\\investgame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0B250761-42EB-43D1-AE73-58E1C501CCCB}|InvestGame.csproj|c:\\users\\administrator\\desktop\\project_csharp\\1\uC8FC\uCC28\\investgame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0B250761-42EB-43D1-AE73-58E1C501CCCB}|InvestGame.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\InvestGame\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Project_CSharp\\1\uC8FC\uCC28\\InvestGame\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\InvestGame\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Project_CSharp\\1\uC8FC\uCC28\\InvestGame\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAANsAAAAAAAAAAAAswOEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-09T08:06:15.327Z",
               "EditorCaption": ""

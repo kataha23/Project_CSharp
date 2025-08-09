@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InvestGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40774147b4c8385a4d123dae09fba8dad5d40d3c")]
 [assembly: System.Reflection.AssemblyProductAttribute("InvestGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InvestGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
