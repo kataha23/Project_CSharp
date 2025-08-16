@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Text;
 
 namespace Project_1_GameFlow
@@ -63,7 +63,6 @@ namespace Project_1_GameFlow
             {
                 StartBattle();
             }
-
             #region 1. 타이틀
             // 언어/환경 명시 필요 - " C#으로 작성할거임 + 콘솔 환경에서 타이틀을 만들어줘 "
             // 자세한 내용 필요 - " 타이틀은 게임 화면에 이미지와 게임 시작 버튼이 있어야해 "

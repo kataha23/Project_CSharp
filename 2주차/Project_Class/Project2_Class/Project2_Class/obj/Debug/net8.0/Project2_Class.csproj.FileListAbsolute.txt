@@ -1,0 +1,15 @@
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\bin\Debug\net8.0\Project2_Class.exe
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\bin\Debug\net8.0\Project2_Class.deps.json
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\bin\Debug\net8.0\Project2_Class.runtimeconfig.json
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\bin\Debug\net8.0\Project2_Class.dll
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\bin\Debug\net8.0\Project2_Class.pdb
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\obj\Debug\net8.0\Project2_Class.GeneratedMSBuildEditorConfig.editorconfig
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\obj\Debug\net8.0\Project2_Class.AssemblyInfoInputs.cache
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\obj\Debug\net8.0\Project2_Class.AssemblyInfo.cs
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\obj\Debug\net8.0\Project2_Class.csproj.CoreCompileInputs.cache
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\obj\Debug\net8.0\Project2_Class.sourcelink.json
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\obj\Debug\net8.0\Project2_Class.dll
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\obj\Debug\net8.0\refint\Project2_Class.dll
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\obj\Debug\net8.0\Project2_Class.pdb
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\obj\Debug\net8.0\Project2_Class.genruntimeconfig.cache
+D:\Githubs\Project_CSharp\Project_Class\Project2_Class\Project2_Class\obj\Debug\net8.0\ref\Project2_Class.dll
