@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\bin\Debug\net8.0\Class3th.exe
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\bin\Debug\net8.0\Class3th.deps.json
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\bin\Debug\net8.0\Class3th.runtimeconfig.json
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\bin\Debug\net8.0\Class3th.dll
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\bin\Debug\net8.0\Class3th.pdb
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\obj\Debug\net8.0\Class3th.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\obj\Debug\net8.0\Class3th.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\obj\Debug\net8.0\Class3th.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\obj\Debug\net8.0\Class3th.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\obj\Debug\net8.0\Class3th.sourcelink.json
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\obj\Debug\net8.0\Class3th.dll
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\obj\Debug\net8.0\refint\Class3th.dll
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\obj\Debug\net8.0\Class3th.pdb
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\obj\Debug\net8.0\Class3th.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\Project_c-\2주차\Class3th\obj\Debug\net8.0\ref\Class3th.dll
